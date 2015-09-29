@@ -1,5 +1,5 @@
 # Macaron-jade
-[![GoDoc](https://godoc.org/github.com/codeskyblue/macaron-jade?status.svg)](https://godoc.org/github.com/codeskyblue/macaron-jade)
+[![GoDoc](https://godoc.org/github.com/macaron-contrib/jade?status.svg)](https://godoc.org/github.com/macaron-contrib/jade)
 
 Macaron middleware/handler for easily rendering serialized JSON and HTML template responses from Jade templates.
 
@@ -16,7 +16,7 @@ package main
 
 import (
 	"github.com/Unknwon/macaron"
-	"github.com/codeskyblue/macaron-jade"
+	"github.com/macaron-contrib/jade"
 )
 
 func main() {
@@ -87,7 +87,7 @@ package main
 
 import (
   "github.com/Unknwon/macaron"
-  "github.com/codeskyblue/macaron-jade"
+  "github.com/macaron-contrib/jade"
 )
 
 func main() {
@@ -116,7 +116,7 @@ package main
 
 import (
   "github.com/Unknwon/macaron"
-  "github.com/codeskyblue/macaron-jade"
+  "github.com/macaron-contrib/jade"
 )
 
 func main() {

@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/Unknwon/macaron"
-	"github.com/codeskyblue/macaron-jade"
+	"github.com/macaron-contrib/jade"
 )
 
 func FuncUpper(s string) string {

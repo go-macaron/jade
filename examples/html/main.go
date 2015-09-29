@@ -3,7 +3,7 @@ package main
 
 import (
 	"github.com/Unknwon/macaron"
-	"github.com/codeskyblue/macaron-jade"
+	"github.com/macaron-contrib/jade"
 )
 
 func main() {
