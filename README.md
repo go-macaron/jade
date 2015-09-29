@@ -6,6 +6,8 @@ Martini middleware/handler for easily rendering serialized JSON and HTML templat
 ## Usage
 This middleware uses Jade implementation in Go [go-floki/jade](https://github.com/go-floki/jade) to render Jade templates.
 
+Code in [examples/html](examples/html)
+
 ~~~ go
 // main.go
 package main
@@ -33,17 +35,18 @@ func main() {
 
 ~~~ html
 <!-- templates/hello.jade -->
-<h2>Hello #{foo}!</h2>
+h2 Hello #{foo}!
 ~~~
 
 ### Options
 `jade.Renderer` comes with a variety of configuration options:
 
+**Layout** is not supported.
+
 ~~~ go
 // ...
 m.Use(jade.Renderer(jade.Options{
   Directory: "templates", // Specify what path to load the templates from.
-  Layout: "layout", // Specify a layout template. Layouts can call {{ yield }} to render the current template.
   Extensions: []string{".jade"}, // Specify extensions to load for templates.
   Funcs: []template.FuncMap{AppHelpers}, // Specify helper function maps for templates to access.
   Charset: "UTF-8", // Sets encoding for json and html content-types. Default is "UTF-8".
