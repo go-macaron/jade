@@ -1,40 +1,42 @@
-# Martini-jade
-Martini middleware/handler for easily rendering serialized JSON and HTML template responses from Jade templates.
+# Macaron-jade
+[![GoDoc](https://godoc.org/github.com/codeskyblue/macaron-jade?status.svg)](https://godoc.org/github.com/codeskyblue/macaron-jade)
 
-[API Reference](http://godoc.org/github.com/codeskyblue/macaron-jade)
+Macaron middleware/handler for easily rendering serialized JSON and HTML template responses from Jade templates.
+
+If you donot know about jade, [learn from here](http://www.learnjade.com/)
 
 ## Usage
 This middleware uses Jade implementation in Go [go-floki/jade](https://github.com/go-floki/jade) to render Jade templates.
 
-Code in [examples/html](examples/html)
+Some examples can be found in [examples](examples)
 
 ~~~ go
 // main.go
 package main
 
 import (
-  "github.com/Unknwon/macaron"
-  "github.com/codeskyblue/macaron-jade"
+	"github.com/Unknwon/macaron"
+	"github.com/codeskyblue/macaron-jade"
 )
 
 func main() {
-  m := macaron.Classic()
-  // render html templates from templates directory
-  m.Use(jade.Renderer())
+	m := macaron.Classic()
+	// render html templates from templates directory
+	m.Use(jade.Renderer())
 
-  m.Get("/", func(r jade.Render) {
-    r.HTML(200, "hello", map[string]string {
-       "foo": "bar",
-    })
-  })
+	m.Get("/", func(r jade.Render) {
+		r.HTML(200, "hello", map[string]string{
+			"foo": "bar",
+		})
+	})
 
-  m.Run()
+	m.Run()
 }
-
 ~~~
 
+File `templates/hello.jade`
+
 ~~~ html
-<!-- templates/hello.jade -->
 h2 Hello #{foo}!
 ~~~
 

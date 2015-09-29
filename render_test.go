@@ -9,7 +9,6 @@ import (
 	"testing"
 
 	"github.com/Unknwon/macaron"
-	//"github.com/codegangsta/macaron"
 )
 
 type Greeting struct {

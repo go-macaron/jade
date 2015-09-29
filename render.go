@@ -29,7 +29,7 @@ var helperFuncs = template.FuncMap{
 	},
 }
 
-// Render is a service that can be injected into a Martini handler. Render provides functions for easily writing JSON and
+// Render is a service that can be injected into a Macaron handler. Render provides functions for easily writing JSON and
 // HTML templates out to a http Response.
 type Render interface {
 	// JSON writes the given status and JSON serialized version of the given value to the http.ResponseWriter.
@@ -57,7 +57,7 @@ type Options struct {
 	// Directory to load templates. Default is "templates"
 	Directory string
 	// Layout template name. Will not render a layout if "". Defaults to "".
-	Layout string
+	//Layout string // Not working in jade
 	// Extensions to parse template files from. Defaults to [".tmpl"]
 	Extensions []string
 	// Funcs is a slice of FuncMaps to apply to the template upon compilation. This is useful for helper functions. Defaults to [].
@@ -76,7 +76,7 @@ type HTMLOptions struct {
 	Layout string
 }
 
-// Renderer is a Middleware that maps a render.Render service into the Martini handler chain. An single variadic render.Options
+// Renderer is a Middleware that maps a render.Render service into the Macaron handler chain. An single variadic render.Options
 // struct can be optionally provided to configure HTML rendering. The default directory for templates is "templates" and the default
 // file extension is ".tmpl".
 //
@@ -126,7 +126,7 @@ func compile(options Options) *template.Template {
 	t := template.New(dir)
 	t.Delims(options.Delims.Left, options.Delims.Right)
 	// parse an initial template in case we don't have any
-	template.Must(t.Parse("Martini"))
+	template.Must(t.Parse("Macaron"))
 
 	funcMap := template.FuncMap{}
 	// add our funcmaps
@@ -255,6 +255,6 @@ func (r *renderer) prepareHTMLOptions(htmlOpt []HTMLOptions) HTMLOptions {
 	}
 
 	return HTMLOptions{
-		Layout: r.opt.Layout,
+		Layout: "", //r.opt.Layout,
 	}
 }
