@@ -10,8 +10,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/Unknwon/macaron"
 	gojade "github.com/go-floki/jade"
+	"gopkg.in/macaron.v1"
 )
 
 const (

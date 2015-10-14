@@ -1,5 +1,5 @@
 # Macaron-jade
-[![GoDoc](https://godoc.org/github.com/macaron-contrib/jade?status.svg)](https://godoc.org/github.com/macaron-contrib/jade)
+[![GoDoc](https://godoc.org/github.com/go-macaron/jade?status.svg)](https://godoc.org/github.com/go-macaron/jade)
 
 Macaron middleware/handler for easily rendering serialized JSON and HTML template responses from Jade templates.
 
@@ -15,8 +15,8 @@ Some examples can be found in [examples](examples)
 package main
 
 import (
-	"github.com/Unknwon/macaron"
-	"github.com/macaron-contrib/jade"
+  "gopkg.in/macaron.v1"
+	"github.com/go-macaron/jade"
 )
 
 func main() {
@@ -86,8 +86,8 @@ The `jade.Renderer` middleware will automatically set the proper Content-Type he
 package main
 
 import (
-  "github.com/Unknwon/macaron"
-  "github.com/macaron-contrib/jade"
+  "gopkg.in/macaron.v1"
+  "github.com/go-macaron/jade"
 )
 
 func main() {
@@ -115,8 +115,8 @@ In order to change the charset, you can set the `Charset` within the `jade.Optio
 package main
 
 import (
-  "github.com/Unknwon/macaron"
-  "github.com/macaron-contrib/jade"
+  "gopkg.in/macaron.v1"
+  "github.com/go-macaron/jade"
 )
 
 func main() {

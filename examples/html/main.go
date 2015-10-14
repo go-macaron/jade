@@ -2,8 +2,8 @@
 package main
 
 import (
-	"github.com/Unknwon/macaron"
-	"github.com/macaron-contrib/jade"
+	"github.com/go-macaron/jade"
+	"gopkg.in/macaron.v1"
 )
 
 func main() {

@@ -5,8 +5,8 @@ import (
 	"html/template"
 	"strings"
 
-	"github.com/Unknwon/macaron"
-	"github.com/macaron-contrib/jade"
+	"github.com/go-macaron/jade"
+	"gopkg.in/macaron.v1"
 )
 
 func FuncUpper(s string) string {
